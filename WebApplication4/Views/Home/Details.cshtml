@@ -1,0 +1,51 @@
+﻿@model WebApplication4.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.rtl.css" rel="stylesheet" />
+
+<h2>Details</h2>
+
+
+<div>
+    @*<h4>Student</h4>*@
+
+    <dl class="dl-horizontal">
+        @*<dt>
+                @Html.DisplayNameFor(model => model.Id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Age)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Age)
+            </dd>*@
+        <dt>
+            <strong>@Html.DisplayNameFor(model => model.Id) :</strong>
+            <tr>@Html.DisplayFor(model => model.Id)</tr>
+        </dt>
+        <dt>
+            <strong>@Html.DisplayNameFor(model => model.Name)</strong>
+            <tr>@Html.DisplayFor(model => model.Name) </tr> </dd>
+        </dt>
+        <dt>
+            <strong>@Html.DisplayNameFor(model => model.Age)</strong>
+            <tr>@Html.DisplayFor(model => model.Age) </tr> </dd>
+        </dt>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-outline-info" })
+    <div class="text-center">
+        <a href="@Url.Action("Index")" class="btn btn-outline-success">Back to List</a>
+    </div>
+</p>

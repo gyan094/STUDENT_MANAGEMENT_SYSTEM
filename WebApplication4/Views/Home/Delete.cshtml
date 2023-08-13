@@ -1,0 +1,36 @@
+﻿@model WebApplication4.Models.Student
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = null;
+
+}
+<link href="~/Content/bootstrap.rtl.css" rel="stylesheet" />
+
+<h2>Are you sure you want to delete this?</h2>
+<div class="dl-horizontal">
+    @*<h4>Student</h4>*@
+
+    <dt>
+        <strong>@Html.DisplayNameFor(model => model.Name)</strong>
+        <tr>@Html.DisplayFor(model => model.Name) </tr> </dd>
+    </dt>
+    <dt>
+        <strong>@Html.DisplayNameFor(model => model.Age)</strong>
+        <tr>@Html.DisplayFor(model => model.Age) </tr> </dd>
+    </dt>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @*<input type="submit" value="Delete" class="btn btn-default" />*@
+            <button type="submit" class="btn btn-outline-info">Delete</button>
+            @*@Html.ActionLink("Back to List", "Index")*@
+            <div class="text-center">
+                <a href="@Url.Action("Index")" class="btn btn-outline-success">Back to List</a>
+            </div>
+        </div>
+    }
+</div>
+
